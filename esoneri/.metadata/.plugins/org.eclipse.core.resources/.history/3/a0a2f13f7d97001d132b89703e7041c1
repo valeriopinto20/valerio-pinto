@@ -1,0 +1,134 @@
+#if defined WIN32
+#include <winsock.h>
+#else
+#define closesocket close
+#include <sys/socket.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#endif
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define ECHOMAX 255
+#define PP 31000
+
+
+void pulisciStringa(char buf[],int size){
+	int i;
+	for(i=0;i<size;i++)
+		buf[i]='\0';
+}
+
+void stampaErrore(char *msg){
+	printf("%s\n",msg);
+}
+
+void pulisciWINSOCK(){
+	#if defined WIN32
+		WSACleanup();
+	#endif
+}
+
+int main(void) {
+
+	#if defined WIN32
+		//system("cls");
+		WSADATA wsaData;
+		int iResult = WSAStartup(MAKEWORD(2,2),&wsaData);
+		if(iResult!=0){
+			stampaErrore("Errore Startup");
+			return EXIT_FAILURE;
+		}
+	#else
+		system("clear");
+	#endif
+
+
+	int sSocket;
+	int i, j;
+	struct sockaddr_in indServer;
+	struct sockaddr_in indClient;
+	int lunghezzaIndC;
+	char buffer[ECHOMAX];
+	char stringaDaInviare[ECHOMAX];
+	int dimMsg;
+
+
+	sSocket=socket(PF_INET,SOCK_DGRAM,IPPROTO_UDP);
+	if(sSocket<0){
+		stampaErrore("Errore creazione socket");
+		closesocket(sSocket);
+		return EXIT_FAILURE;
+	}else printf("-> Creazione socket avvenuta \n");
+
+
+	memset(&indServer,0,sizeof(indServer)); 	// assegnazione indirizzo del server
+	indServer.sin_family=AF_INET;
+	indServer.sin_port=htons(PP);
+	indServer.sin_addr.s_addr=inet_addr("127.0.0.1");
+
+
+	int resultBind = bind(sSocket,(struct sockaddr *) &indServer, sizeof(indServer));	 //collegamento socket
+	if(resultBind<0){
+		stampaErrore("-> Errore Bind");
+	}
+
+
+	struct hostent *nomeClient;
+	int contVocali=0;
+
+	printf("-> SERVER(%s) è in ascolto sulla porta: %d\n",inet_ntoa(indServer.sin_addr),ntohs(indServer.sin_port));
+	while(1)
+	{
+		printf("-> In attesa di pacchetti\n");
+		pulisciStringa(buffer,ECHOMAX); 	//ricevo prima stringa
+
+		lunghezzaIndC=sizeof(indClient);
+		dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+		strcpy(stringaDaInviare,"OK");
+
+		nomeClient=gethostbyaddr((const char *)&indClient.sin_addr,sizeof(indClient.sin_addr),PF_INET);
+		printf("\n-> Messaggio ricevuto da: %s : %s\n",nomeClient->h_name,buffer);
+		if(sendto(sSocket,stringaDaInviare,strlen(stringaDaInviare),0,(struct sockaddr*)&indClient,sizeof(indClient))!=strlen(stringaDaInviare)){
+			stampaErrore("-> Errore invio stringa");
+		}
+
+		pulisciStringa(buffer,ECHOMAX); 	//ricevo il numero delle vocali
+		lunghezzaIndC=sizeof(indClient);
+		dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+
+		contVocali=atoi(buffer); 	//converto da stringa a intero
+
+
+		for(i=0;i<contVocali;i++)
+		{
+			pulisciStringa(buffer,ECHOMAX);
+			pulisciStringa(stringaDaInviare,ECHOMAX);
+			lunghezzaIndC=sizeof(indClient);
+
+			dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+			buffer[dimMsg]='\0';
+
+			for(j=0;j<dimMsg;j++){ 		//trasformo vocali in maiuscolo
+				buffer[j]=toupper(buffer[j]);
+			}
+
+
+			strcpy(stringaDaInviare,buffer); 	//invio vocali in maiuscolo
+			if(sendto(sSocket,stringaDaInviare,strlen(stringaDaInviare),0,(struct sockaddr*)&indClient,sizeof(indClient))!=strlen(stringaDaInviare)){
+						stampaErrore("Errore invio stringa");
+					}
+
+		}
+		printf("-> Elaborazione e invio risposta avvenuta con successo! \n");
+	}
+
+	closesocket(sSocket);	 //chiudo il socket
+	pulisciWINSOCK();
+
+
+	return 0;
+}

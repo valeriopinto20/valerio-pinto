@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;jhasdjasd/Debug/jhasdjasd.exe&apos; to &apos;server.exe&apos;" description="Rename resource &apos;jhasdjasd.exe&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Debug/jhasdjasd.exe" name="server.exe" stamp="1669139679060" updateReferences="true"/>
+</session>

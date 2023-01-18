@@ -1,0 +1,9 @@
+12:56:19 **** Incremental Build of configuration Debug for project gdfghjhv ****
+Info: Internal Builder is used for build
+gcc -o gdfghjhv.exe "src\\gdfghjhv.o" -lwsock32 
+gcc: Internal error: Aborted (program collect2)
+Please submit a full bug report.
+See <URL:http://www.mingw.org/bugs.shtml> for instructions.
+
+12:56:19 Build Finished. 0 errors, 0 warnings. (took 204ms)
+

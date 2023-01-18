@@ -1,0 +1,822 @@
+18:58:52 **** Rebuild of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+18:59:03 **** Rebuild of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\server_udp.o" "..\\src\\server_udp.c" 
+..\src\server_udp.c: In function 'main':
+..\src\server_udp.c:90:74: warning: pointer targets in passing argument 6 of 'recvfrom' differ in signedness [-Wpointer-sign]
+   dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+                                                                          ^
+In file included from ..\src\server_udp.c:2:0:
+c:\mingw\include\winsock.h:596:32: note: expected 'int *' but argument is of type 'unsigned int *'
+ WINSOCK_API_LINKAGE int PASCAL recvfrom (SOCKET, char *, int, int, struct sockaddr *, int *);
+                                ^~~~~~~~
+..\src\server_udp.c:93:28: warning: passing argument 1 of 'gethostbyaddr' from incompatible pointer type [-Wincompatible-pointer-types]
+   nomeClient=gethostbyaddr(&indClient.sin_addr,sizeof(indClient.sin_addr),PF_INET);
+                            ^
+In file included from ..\src\server_udp.c:2:0:
+c:\mingw\include\winsock.h:604:59: note: expected 'const char *' but argument is of type 'struct in_addr *'
+ WINSOCK_API_LINKAGE DECLARE_STDCALL_P (struct hostent *)  gethostbyaddr (const char *, int, int);
+                                                           ^~~~~~~~~~~~~
+..\src\server_udp.c:101:74: warning: pointer targets in passing argument 6 of 'recvfrom' differ in signedness [-Wpointer-sign]
+   dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+                                                                          ^
+In file included from ..\src\server_udp.c:2:0:
+c:\mingw\include\winsock.h:596:32: note: expected 'int *' but argument is of type 'unsigned int *'
+ WINSOCK_API_LINKAGE int PASCAL recvfrom (SOCKET, char *, int, int, struct sockaddr *, int *);
+                                ^~~~~~~~
+..\src\server_udp.c:112:75: warning: pointer targets in passing argument 6 of 'recvfrom' differ in signedness [-Wpointer-sign]
+    dimMsg=recvfrom(sSocket,buffer,ECHOMAX,0,(struct sockaddr*) &indClient,&lunghezzaIndC);
+                                                                           ^
+In file included from ..\src\server_udp.c:2:0:
+c:\mingw\include\winsock.h:596:32: note: expected 'int *' but argument is of type 'unsigned int *'
+ WINSOCK_API_LINKAGE int PASCAL recvfrom (SOCKET, char *, int, int, struct sockaddr *, int *);
+                                ^~~~~~~~
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+18:59:34 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\server_udp.o" "..\\src\\server_udp.c" 
+..\src\server_udp.c: In function 'main':
+..\src\server_udp.c:93:28: warning: passing argument 1 of 'gethostbyaddr' from incompatible pointer type [-Wincompatible-pointer-types]
+   nomeClient=gethostbyaddr(&indClient.sin_addr,sizeof(indClient.sin_addr),PF_INET);
+                            ^
+In file included from ..\src\server_udp.c:2:0:
+c:\mingw\include\winsock.h:604:59: note: expected 'const char *' but argument is of type 'struct in_addr *'
+ WINSOCK_API_LINKAGE DECLARE_STDCALL_P (struct hostent *)  gethostbyaddr (const char *, int, int);
+                                                           ^~~~~~~~~~~~~
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+19:00:54 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\server_udp.o" "..\\src\\server_udp.c" 
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+19:20:48 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:118:12: warning: passing argument 1 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+     strcpy(vocaliTrovate[contV], strAlfan[i]);
+            ^~~~~~~~~~~~~
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:79:40: note: expected 'char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^~~~~~
+..\src\client_udp.c:118:34: warning: passing argument 2 of 'strcpy' makes pointer from integer without a cast [-Wint-conversion]
+     strcpy(vocaliTrovate[contV], strAlfan[i]);
+                                  ^~~~~~~~
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:79:40: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char *strcpy (char *, const char *);
+                                        ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+19:21:22 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+19:27:03 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:117:27: warning: comparison between pointer and integer
+    if(toupper(strAlfan[i])=="A"){// || toupper(strAlfan[i])=='E' || toupper(strAlfan[i])=='I' || toupper(strAlfan[i])=='O' || toupper(strAlfan[i])=='U'){
+                           ^~
+..\src\client_udp.c:117:27: warning: comparison with string literal results in unspecified behavior [-Waddress]
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+19:27:16 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+19:30:13 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:137:2: warning: 'strV' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  itoa(contV,strV,10);  //casting da intero a stringa
+  ^~~~~~~~~~~~~~~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+19:30:46 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+20:19:24 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+20:20:11 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\server_udp.o" "..\\src\\server_udp.c" 
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file server_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:20:30 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file server_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for client_udp
+20:21:05 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file server_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for client_udp
+20:21:29 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file server_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+20:21:35 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+Info: Nothing to build for client_udp
+20:22:38 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+20:27:50 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+20:30:21 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+20:35:04 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file client_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for server_udp
+20:35:19 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+20:37:34 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+20:39:32 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+Info: Nothing to build for server_udp
+Info: Nothing to build for server_udp
+22:14:09 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file client_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:14:35 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file client_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+22:14:59 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+22:19:44 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:20:59 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:22:48 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:28:02 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:28:50 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:29:52 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:30:44 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:32:24 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:3: error: 'else' without a previous 'if'
+   else
+   ^~~~
+22:33:11 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:34:10 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:35:02 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:145:13: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV,&strV,10);  //casting da intero a stringa
+             ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:37:13 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:13: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV,&strV,10);//casting da intero a stringa
+             ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:37:43 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:38:37 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:39:24 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:41:02 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:42:20 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:44:21 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:45:34 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:51:21 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:2: warning: implicit declaration of function 'sprinf' [-Wimplicit-function-declaration]
+  sprinf(strV, "%d", contV);//casting da intero a stringa
+  ^~~~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+  printf("%s");
+           ^
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+src\client_udp.o: In function `main':
+C:\Users\valer\eclipse-workspace\client_udp\Debug/../src/client_udp.c:143: undefined reference to `sprinf'
+collect2.exe: error: ld returned 1 exit status
+22:54:30 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:144:11: warning: format '%s' expects a matching 'char *' argument [-Wformat=]
+  printf("%s");
+           ^
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:54:47 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:56:19 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:58:50 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+22:59:22 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:01:02 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:147:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:147:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char **'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:147:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:08:07 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:146:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:146:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char **'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:146:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:14:01 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:146:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:146:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char **'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:146:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:15:03 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:146:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char **'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:146:124: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                            ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:15:20 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:146:123: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,strV,strlen(strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                           ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:15:53 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:16:07 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:16:22 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+23:16:30 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\server_udp.o" "..\\src\\server_udp.c" 
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file server_udp.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+23:16:44 **** Incremental Build of configuration Debug for project server_udp ****
+Info: Internal Builder is used for build
+gcc -o server_udp.exe "src\\server_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+23:17:38 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+23:18:57 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:143:14: warning: passing argument 2 of 'itoa' from incompatible pointer type [-Wincompatible-pointer-types]
+  itoa(contV, &strV, 10);//casting da intero a stringa
+              ^
+In file included from c:\mingw\include\objbase.h:12:0,
+                 from c:\mingw\include\ole2.h:9,
+                 from c:\mingw\include\windows.h:100,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\stdlib.h:631:40: note: expected 'char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  char* itoa (int, char*, int);
+                                        ^~~~
+..\src\client_udp.c:144:11: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'char **' [-Wformat=]
+  printf("%s", &strV);
+           ^
+..\src\client_udp.c:146:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:146:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char **'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:146:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char **'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:22:45 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:146:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:146:25: warning: passing argument 2 of 'sendto' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                         ^
+In file included from ..\src\client_udp.c:2:0:
+c:\mingw\include\winsock.h:598:32: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ WINSOCK_API_LINKAGE int PASCAL sendto (SOCKET, const char *, int, int, const struct sockaddr *, int);
+                                ^~~~~~
+..\src\client_udp.c:146:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket,&strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:23:20 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:146:38: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket, strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                      ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+..\src\client_udp.c:146:125: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket, strV,strlen(&strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                             ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:23:28 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:146:124: warning: passing argument 1 of 'strlen' from incompatible pointer type [-Wincompatible-pointer-types]
+  if(sendto(clientSocket, strV,strlen(strV),0,(struct sockaddr*)&indirizzoServerInvio,sizeof(indirizzoServerInvio))!=strlen(&strV)){  //invio numero vocali
+                                                                                                                            ^
+In file included from c:\mingw\include\winnt.h:49:0,
+                 from c:\mingw\include\windef.h:269,
+                 from c:\mingw\include\windows.h:42,
+                 from c:\mingw\include\winsock.h:52,
+                 from ..\src\client_udp.c:2:
+c:\mingw\include\string.h:83:41: note: expected 'const char *' but argument is of type 'char (*)[255]'
+ _CRTIMP __cdecl __MINGW_NOTHROW  size_t strlen (const char *) __MINGW_ATTRIB_PURE;
+                                         ^~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:23:35 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for server_udp
+23:33:11 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+..\src\client_udp.c: In function 'main':
+..\src\client_udp.c:125:3: warning: implicit declaration of function 'strstrcpy' [-Wimplicit-function-declaration]
+   strstrcpy(strAlfan, "cacca");
+   ^~~~~~~~~
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+src\client_udp.o: In function `main':
+C:\Users\valer\eclipse-workspace\client_udp\Debug/../src/client_udp.c:125: undefined reference to `strstrcpy'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for server_udp
+23:33:40 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+src\client_udp.o: In function `main':
+C:\Users\valer\eclipse-workspace\client_udp\Debug/../src/client_udp.c:125: undefined reference to `strstrcpy'
+collect2.exe: error: ld returned 1 exit status
+23:34:20 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+Info: Nothing to build for client_udp
+Info: Nothing to build for server_udp
+23:44:09 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:46:37 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:48:01 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
+23:52:48 **** Incremental Build of configuration Debug for project client_udp ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\client_udp.o" "..\\src\\client_udp.c" 
+gcc -o client_udp.exe "src\\client_udp.o" -lwsock32 
